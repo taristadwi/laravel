@@ -26,3 +26,4 @@ Route::get('/about',  [AboutController::class, 'about']);
 
 Route::get('/articles/{id}',  [PageController::class, 'articles']);
 Route::get('/article/{id}',  [ArticleController::class, 'article']);
+
