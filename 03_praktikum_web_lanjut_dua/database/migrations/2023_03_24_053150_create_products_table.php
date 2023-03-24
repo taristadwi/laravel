@@ -15,16 +15,15 @@ return new class extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->id();
             $table->string('nama_Product', 100);
+
         });
     }
-
     /**
      * Reverse the migrations.
      *  @return void
      */
-
     public function down()
     {
-        Schema::dropIfExists('product');
+        Schema::dropIfExists('Product');
     }
 };
