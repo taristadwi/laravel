@@ -15,9 +15,9 @@ return new class extends Migration
             $table->increments('id_admin');
             $table->string('nama');
             $table->char('jk');
-            $table->varchar('ttl');
-            $table->varchar('username');
-            $table->varchar('password');
+            $table->string('ttl');
+            $table->string('username');
+            $table->string('password');
             
         });
     }

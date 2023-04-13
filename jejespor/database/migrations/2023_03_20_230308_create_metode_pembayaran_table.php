@@ -8,20 +8,22 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('metode_pembayaran', function (Blueprint $table) {
             $table->increments('id_metodePembayaran');
-            $table->varchar('metodePembayaran');
+            $table->string('metodePembayaran');
         
         });
     }
 
     /**
      * Reverse the migrations.
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('metode_pembayaran');
     }

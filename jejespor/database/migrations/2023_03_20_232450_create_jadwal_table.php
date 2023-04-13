@@ -8,8 +8,9 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('jadwal', function (Blueprint $table) {
             $table->increments('id_jadwal');
@@ -28,8 +29,9 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     * @return voidC
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('jadwal');
     }

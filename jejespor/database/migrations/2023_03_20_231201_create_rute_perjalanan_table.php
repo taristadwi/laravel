@@ -8,23 +8,23 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('rute_perjalanan', function (Blueprint $table) {
             $table->increments('id_rute');
-            $table->unsignedInteger('stasiun_tujuan');
-            $table->foreign('stasiun_tujuan')->references('id_stasiun')->on('stasiun')->onDelete('cascade');
-            $table->unsignedInteger('stasiun_keberangkatan');
-            $table->foreign('stasiun_keberangkatan')->references('id_stasiun')->on('stasiun')->onDelete('cascade');
+            $table->unsignedInteger('id_stasiun');
+            $table->foreign('id_stasiun')->references('id_stasiun')->on('stasiun')->onDelete('cascade');
 
         });
     }
 
     /**
      * Reverse the migrations.
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('rute_perjalanan');
     }

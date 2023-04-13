@@ -8,12 +8,12 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('boarding_pass', function (Blueprint $table) {
             $table->increments('id_Boarding');
-            
             $table->unsignedInteger('invoice');
             $table->foreign('invoice')->references('invoice')->on('transaksi')->onDelete('cascade');
             $table->timestamps();
@@ -22,8 +22,9 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('boarding_pass');
     }
